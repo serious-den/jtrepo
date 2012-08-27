@@ -1,0 +1,28 @@
+package org.jazzteam.model.elements;
+
+import org.jazzteam.model.elements.Figure;
+import org.jazzteam.model.elements.Connector;
+
+/**
+ * @author Den
+ * @version 1.0
+ * @created 16-���-2012 17:00:31
+ */
+public class ConnectorPlace {
+    private Connector connector;
+	private double cordX;
+	private double cordY;
+	private Figure figure;
+	private boolean isBusy;
+	public Connector m_Connector;
+	public Figure m_Figure;
+
+	public ConnectorPlace(){
+
+	}
+
+	public void finalize() throws Throwable {
+
+	}
+
+}

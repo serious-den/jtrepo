@@ -1,0 +1,25 @@
+package org.jazzteam.model.elements;
+
+import org.jazzteam.model.AbstractElement;
+
+/**
+ * @author Den
+ * @version 1.0
+ * @created 16-���-2012 17:00:31
+ */
+public class Connector extends AbstractElement {
+
+	private ConnectorPlace connPlace;
+	private boolean isConnected;
+	public Cable m_Cable;
+	public ConnectorPlace m_ConnectorPlace;
+
+	public Connector(){
+
+	}
+
+	public void finalize() throws Throwable {
+		super.finalize();
+	}
+
+}

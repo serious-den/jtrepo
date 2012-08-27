@@ -1,0 +1,56 @@
+10
+
+dir
+0
+https://jazzteamedu.svn.sourceforge.net/svnroot/jazzteamedu/educationSystem/src/test/java/org/jazzteam/model/liveTest
+https://jazzteamedu.svn.sourceforge.net/svnroot/jazzteamedu
+add
+
+
+
+
+
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+ce2549f7-8d67-4de8-8eb0-08d05aa8e5da
+
+LiveTest.java
+file
+
+
+
+add
+
+Reflection.java
+file
+
+
+
+add
+
+TargetDen.java
+file
+
+
+
+add
+
+ToStringDen.java
+file
+
+
+
+add
+
