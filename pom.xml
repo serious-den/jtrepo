@@ -50,7 +50,19 @@
     </dependencies>
 
     <build>
-        <finalName>l2cms</finalName>
+	
+	<plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.0</version>
+        <configuration>
+          <source>5</source>
+        </configuration>
+      </plugin>
+    </plugins>
+        
+		<finalName>l2cms</finalName>
     </build>
 
 
