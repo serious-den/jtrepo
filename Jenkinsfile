@@ -1,9 +1,12 @@
-@Library('CommonLib') import org.dmar.libs.CommonLib
+@Library('CommonLib')
+import org.dmar.libs.CommonLib
+
 node {
     def mvnHome
 
     stage('Preparation') {
         mvnHome = tool 'M3'
+        properties([parameters([booleanParam(defaultValue: false, description: '', name: 'skipBuild')])])
     }
 
     stage('Some tests') {
@@ -24,13 +27,14 @@ node {
     }
 
     stage('Build') {
-        // Run the maven build
-        if (isUnix()) {
-           sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
-        } else {
-           bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
-        }
+
         CommonLib.buildProject(mvnHome)
+        // Run the maven build
+        if (isUnix() && !skipBuild) {
+            sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+        } else {
+            bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
+        }
     }
 
     stage('Results') {
