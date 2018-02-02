@@ -3,10 +3,12 @@ import org.dmar.libs.CommonLib
 
 node {
     def mvnHome
+    def skipBuild
 
     stage('Preparation') {
         mvnHome = tool 'M3'
         properties([parameters([booleanParam(defaultValue: false, description: '', name: 'skipBuild')])])
+        skipBuild = ${ !params.skipBuild }
     }
 
     stage('Some tests') {
@@ -30,7 +32,7 @@ node {
 
         CommonLib.buildProject(mvnHome)
         // Run the maven build
-        if (isUnix() && ${!params.skipBuild}) {
+        if (isUnix() &&) {
             sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
         } else {
             bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
