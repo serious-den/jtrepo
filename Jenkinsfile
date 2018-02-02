@@ -1,7 +1,7 @@
 @Library('CommonLib') _
 node {
    def mvnHome
-   stage('Preparation') { // for display purposes
+   stage('Preparation') {
       // Get some code from a GitHub repository
       checkout scm
       // Get the Maven tool.
@@ -16,18 +16,18 @@ node {
 
       echo "obj1 saw ${obj1.someVar}"
       echo "obj1 saw ${obj2.someVar}"
-
-
-
    }
+
    stage('Build') {
       // Run the maven build
-      if (isUnix()) {
-         sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
-      } else {
-         bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
-      }
+      //if (isUnix()) {
+      //   sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+      //} else {
+      //   bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
+      //}
+       org.dmar.libs.CommonLib.buildProject()
    }
+
    stage('Results') {
       junit '**/target/surefire-reports/TEST-*.xml'
       archive 'target/*.jar'
