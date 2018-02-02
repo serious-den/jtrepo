@@ -32,7 +32,7 @@ node {
 
         CommonLib.buildProject(mvnHome)
         // Run the maven build
-        if (isUnix() &&) {
+        if (isUnix() && skipBuild) {
             sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
         } else {
             bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
