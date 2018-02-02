@@ -9,12 +9,6 @@ class CommonLib {
     }
 
     static void buildProject(String mvnHome) {
-        // Run the maven build
-        if (isUnix()) {
-            sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
-        } else {
-            bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
-        }
+        println 'build module'
     }
-
 }
