@@ -7,8 +7,10 @@ node {
 
     stage('Preparation') {
         mvnHome = tool 'M3'
-        properties([parameters([booleanParam(defaultValue: false, description: '', name: 'skipBuild'), string(defaultValue: 'hi!', description: '', name: 'newP', trim: false)])])
-        skipBuild = "${params.skipBuild}"
+        properties([parameters([
+                booleanParam(defaultValue: false, description: '', name: 'skipBuild'),
+                string(defaultValue: 'hi!', description: '', name: 'newP', trim: false)])])
+        skipBuild = "${params.skipBuild}" as boolean
         def newP = "${params.newP}"
         echo "SkipBuild param = $skipBuild , type = ${skipBuild.class}"
         echo "SkipBuild param = $newP , type = ${newP.class}"
