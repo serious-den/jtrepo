@@ -10,8 +10,10 @@ node {
         properties([parameters([
                 booleanParam(defaultValue: false, description: '', name: 'skipBuild'),
                 string(defaultValue: 'hi!', description: '', name: 'newP', trim: false)])])
-        skipBuild = "${params.skipBuild}" as boolean
+        
+        skipBuild = new Boolean("${params.skipBuild}" as boolean)
         def newP = "${params.newP}"
+
         echo "SkipBuild param = $skipBuild , type = ${skipBuild.class}"
         echo "SkipBuild param = ${params.skipBuild} , type = ${params.skipBuild.class}"
         echo "SkipBuild param = $newP , type = ${newP.class}"
