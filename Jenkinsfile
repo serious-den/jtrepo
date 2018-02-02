@@ -1,4 +1,4 @@
-@Library('src\main\groovy\org\dmar\libs\CommonLib.groovy') import org.dmar.libs.CommonLib
+@Library('src/main/groovy/org/dmar/libs/CommonLib.groovy') import org.dmar.libs.CommonLib
 node {
    def mvnHome
    stage('Preparation') { // for display purposes
