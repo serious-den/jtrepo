@@ -3,12 +3,13 @@ import org.dmar.libs.CommonLib
 
 node {
     def mvnHome
-    def skipBuild
+    boolean skipBuild
 
     stage('Preparation') {
         mvnHome = tool 'M3'
         properties([parameters([booleanParam(defaultValue: false, description: '', name: 'skipBuild')])])
         skipBuild = "${params.skipBuild}"
+        echo "SkipBuild param = $skipBuild , type = $skipBuild.class"
     }
 
     stage('Some tests') {
