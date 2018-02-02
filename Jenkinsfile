@@ -1,4 +1,4 @@
-@Library('CommonLib') _
+@Library('CommonLib') import org.dmar.libs.CommonLib
 node {
    def mvnHome
    stage('Preparation') { // for display purposes
