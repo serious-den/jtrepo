@@ -3,11 +3,7 @@ package org.dmar.model.services;
 import org.dmar.model.Diagram;
 import org.dmar.model.elements.Figure;
 
-/**
- * @author Den
- * @version 1.0
- * @created 16-���-2012 17:00:31
- */
+
 public class DiagramRunner {
 
     public static final String GREEN_COLOR = "greenColor";

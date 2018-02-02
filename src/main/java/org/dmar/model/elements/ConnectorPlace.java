@@ -2,11 +2,7 @@ package org.dmar.model.elements;
 
 import org.dmar.model.AbstractElement;
 
-/**
- * @author Den
- * @version 1.0
- * @created 16-���-2012 17:00:31
- */
+
 public class ConnectorPlace extends AbstractElement{
     private Connector connector;
 	private double cordX;

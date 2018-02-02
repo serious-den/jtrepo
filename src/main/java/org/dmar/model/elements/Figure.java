@@ -4,11 +4,7 @@ import org.dmar.model.AbstractElement;
 
 import java.util.List;
 
-/**
- * @author Den
- * @version 1.0
- * @created 16-���-2012 17:00:31
- */
+
 public class Figure extends AbstractElement {
 
 	private List<ConnectorPlace> connectorPlaces;

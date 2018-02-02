@@ -2,11 +2,7 @@ package org.dmar.model.elements;
 
 import org.dmar.model.AbstractElement;
 
-/**
- * @author Den
- * @version 1.0
- * @created 16-���-2012 17:00:30
- */
+
 public class Cable extends AbstractElement {
 
 	private Connector connectorA;

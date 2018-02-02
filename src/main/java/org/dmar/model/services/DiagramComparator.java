@@ -1,13 +1,9 @@
 package org.dmar.model.services;
 
 import org.dmar.model.Diagram;
-import org.dmar.model.Differense;
+import org.dmar.model.Difference;
 
-/**
- * @author Den
- * @version 1.0
- * @created 16-���-2012 17:00:31
- */
+
 public class DiagramComparator {
 
 	public DiagramComparator(){
@@ -23,7 +19,7 @@ public class DiagramComparator {
 	 * @param d1
 	 * @param d2
 	 */
-	public Differense compare(Diagram d1, Diagram d2){
+	public Difference compare(Diagram d1, Diagram d2){
 		return null;
 	}
 }
