@@ -1,4 +1,4 @@
-@Library('CommonLib') import org.dmar.libs.CommonLib
+@Library('CommonLib') _
 node {
    def mvnHome
    stage('Preparation') { // for display purposes
@@ -8,7 +8,7 @@ node {
       // ** NOTE: This 'M3' Maven tool must be configured
       // **       in the global configuration.
       mvnHome = tool 'M3'
-      def var1 = CommonLib.getClassName()
+      def var1 = org.dmar.libs.CommonLib.getClassName()
       echo "lib saw ${var1}"
    }
    stage('Build') {
