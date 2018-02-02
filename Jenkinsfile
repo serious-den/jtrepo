@@ -9,7 +9,7 @@ node {
         mvnHome = tool 'M3'
         properties([parameters([booleanParam(defaultValue: false, description: '', name: 'skipBuild')])])
         skipBuild = "${params.skipBuild}"
-        echo "SkipBuild param = $skipBuild , type = $skipBuild.class"
+        echo "SkipBuild param = $skipBuild , type = ${skipBuild.class}"
     }
 
     stage('Some tests') {
