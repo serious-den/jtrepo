@@ -8,7 +8,7 @@ node {
     stage('Preparation') {
         mvnHome = tool 'M3'
         properties([parameters([booleanParam(defaultValue: false, description: '', name: 'skipBuild')])])
-        skipBuild = ${ !params.skipBuild }
+        skipBuild = "${params.skipBuild}"
     }
 
     stage('Some tests') {
@@ -32,7 +32,7 @@ node {
 
         CommonLib.buildProject(mvnHome)
         // Run the maven build
-        if (isUnix() && skipBuild) {
+        if (isUnix() && !skipBuild) {
             sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
         } else {
             bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
