@@ -8,14 +8,12 @@ class CommonLib {
         "SomeText"
     }
 
-    static void buildProject() {
-        stage('Build') {
-            // Run the maven build
-            if (isUnix()) {
-                sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
-            } else {
-                bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
-            }
+    static void buildProject(String mvnHome) {
+        // Run the maven build
+        if (isUnix()) {
+            sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+        } else {
+            bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
         }
     }
 
