@@ -19,12 +19,12 @@ import java.util.Map;
 import java.util.Random;
 
 public class LiveTest {
-    public static final String CONNECTOR_PLACE = "connectorPlace";
-    public static final String NAME_PROPERTY = "name";
-    public static final String TRIANGLE_FIGURE_TYPE = "triangle";
-    public static final String SQUARE_FIGURE_TYPE = "square";
-    public static final String CONNECTOR_NAME = "connector";
-    public static final String CABLE_NAME = "cable";
+    private static final String CONNECTOR_PLACE = "connectorPlace";
+    private static final String NAME_PROPERTY = "name";
+    private static final String TRIANGLE_FIGURE_TYPE = "triangle";
+    private static final String SQUARE_FIGURE_TYPE = "square";
+    private static final String CONNECTOR_NAME = "connector";
+    private static final String CABLE_NAME = "cable";
     public static final String CURRENT_ELENEN_TEXT = "текущий элемент ";
     public static final String CHECK_CONNECTION_TEST_START_TEXT = "checkConnectionTest start";
     public static final String CHECK_CONNECTION_TEST_END_TEXT = "checkConnectionTest end";
