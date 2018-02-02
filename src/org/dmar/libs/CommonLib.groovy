@@ -7,5 +7,4 @@ class CommonLib {
     static String getClassName() {
         "SomeText"
     }
-
 }
