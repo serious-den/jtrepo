@@ -10,10 +10,10 @@ node {
       mvnHome = tool 'M3'
       def var1 = org.dmar.libs.CommonLib.getClassName()
       echo "lib saw ${var1}"
-      def obj1 = org.dmar.libs.CommonLib()
-      def obj2 = org.dmar.libs.CommonLib()
+      def obj1 = new org.dmar.libs.CommonLib()
+      def obj2 = new org.dmar.libs.CommonLib()
       obj2.someVar = 'AnotherText'
-      
+
       echo "obj1 saw ${obj1.someVar}"
       echo "obj1 saw ${obj2.someVar}"
 
