@@ -8,7 +8,7 @@ class CommonLib {
         "SomeText"
     }
 
-    static void buildProject(String mvnHome) {
-        println 'build module'
+    static void buildProject(Object obj) {
+        println "build module $obj"
     }
 }
