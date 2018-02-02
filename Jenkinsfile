@@ -9,7 +9,7 @@ node {
       // **       in the global configuration.
       mvnHome = tool 'M3'
       def var1 = CommonLib.getClassName()
-      echo "lib saw $(var1)"
+      echo "lib saw ${var1}"
    }
    stage('Build') {
       // Run the maven build
