@@ -52,8 +52,10 @@ node {
     }
 
     stage('Results') {
-        junit '**/target/surefire-reports/TEST-*.xml'
-        archive 'target/*.jar'
+        if (!skipBuild) {
+            junit '**/target/surefire-reports/TEST-*.xml'
+            archive 'target/*.jar'
+        }
     }
 
     stage('Deploy') {
