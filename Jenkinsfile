@@ -5,11 +5,18 @@ node {
     def mvnHome
     boolean skipBuild
 
+    parameters {
+        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+    }
+
     stage('Preparation') {
         mvnHome = tool 'M3'
-        properties([parameters([
-                booleanParam(defaultValue: false, description: '', name: 'skipBuild'),
-                string(defaultValue: 'hi!', description: '', name: 'newP', trim: false)])])
+        properties([
+                parameters([
+                        booleanParam(defaultValue: false, description: '', name: 'skipBuild'),
+                        string(defaultValue: 'hi!', description: '', name: 'newP', trim: false)
+                ])
+        ])
 
         skipBuild = params.skipBuild as boolean
         def newP = params.newP
