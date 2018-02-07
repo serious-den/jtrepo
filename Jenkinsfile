@@ -15,5 +15,16 @@ node {
         }
     }
 
+    for (int i = 0; i < 10; i++) {
+        stage("expance node [master]") {
+            builders[labels[0]] = {
+                node(labels[0]) {
+                    echo "hello from lablel $label"
+                    sh 'pwd'
+                }
+            }
+        }
+    }
+
     parallel builders
 }
