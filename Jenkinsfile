@@ -7,6 +7,8 @@ pipeline {
             }
         }
         stage('Parallel Stage') {
+            def mvnHome
+            boolean skipBuild
             when {
                 branch 'ver-1.2'
             }
