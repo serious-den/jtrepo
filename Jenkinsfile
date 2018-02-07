@@ -60,14 +60,14 @@ try {
                     }
                 }
 
-                stage('thread 2') {
+               /* stage('thread 2') {
                     agent {
                         label "slave1"
                     }
                     steps {
                         echo "On slave1"
                     }
-                }
+                }*/
             }
 
             CommonLib.buildProject(mvnHome)
@@ -93,8 +93,9 @@ try {
         }
     }
 } catch (err) {
-    print 'some error is occurred'
+    print 'Some error is occurred'
     print err
-    err.printStackTrace()
-    //Nothing TODO
+    print err.stackTrace.toString()
+    urrentBuild.result = 'FAILURE'
+
 }
