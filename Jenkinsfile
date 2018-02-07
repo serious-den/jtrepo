@@ -1,34 +1,17 @@
-pipeline {
-    agent any
-    stages {
-        stage('Non-Parallel Stage') {
-            steps {
-                echo 'This stage will be executed first.'
-            }
-        }
-        stage('Parallel Stage') {
-            when {
-                branch 'ver-1.2'
-            }
-            failFast true
-            parallel {
-                stage('Branch A') {
-                    agent {
-                        label "master"
-                    }
-                    steps {
-                        echo "On Branch A"
-                    }
-                }
-                stage('Branch B') {
-                    agent {
-                        label "slave1"
-                    }
-                    steps {
-                        echo "On Branch B"
-                    }
-                }
+node{
+    def labels = ['master', 'slave1'] // labels for Jenkins node types we will build on
+    def builders = [:]
+    for (x in labels) {
+        def label = x // Need to bind the label variable before the closure - can't do 'for (label in labels)'
+
+        // Create a map to pass in to the 'parallel' step so we can fire all the builds at once
+        builders[label] = {
+            node(label) {
+                echo "hello from lablel $label"
+                sh 'pwd'
             }
         }
     }
+
+    parallel builders
 }
