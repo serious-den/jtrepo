@@ -5,7 +5,6 @@ import org.dmar.libs.CommonLib
 
 try {
     node {
-        agent any
         def mvnHome
         boolean skipBuild
 
@@ -96,5 +95,6 @@ try {
 } catch (err) {
     print 'some error is occurred'
     print err
+    err.printStackTrace()
     //Nothing TODO
 }
