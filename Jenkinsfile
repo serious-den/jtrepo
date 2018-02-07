@@ -46,16 +46,24 @@ node {
     }
 
     stage('Build') {
-        
+
         parallel {
             stage('thread 1') {
-                echo 'thr1'
+                agent {
+                    label "master"
+                }
+                steps {
+                    echo "On Master"
+                }
             }
+            
             stage('thread 2') {
-                echo 'thr2'
-            }
-            stage('thread 3') {
-                echo 'thr3'
+                agent {
+                    label "slave1"
+                }
+                steps {
+                    echo "On slave1"
+                }
             }
         }
 
