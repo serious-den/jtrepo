@@ -96,6 +96,6 @@ try {
     print 'Some error is occurred'
     print err
     print err.stackTrace.toString()
-    urrentBuild.result = 'FAILURE'
+    currentBuild.result = 'FAILURE'
 
 }
