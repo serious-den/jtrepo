@@ -4,7 +4,7 @@
 import org.dmar.libs.CommonLib
 
 try {
-    agent {
+    node {
         agent any
         def mvnHome
         boolean skipBuild
