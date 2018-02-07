@@ -19,7 +19,7 @@ node {
         stage("expance node [master]") {
             builders[labels[0]] = {
                 node(labels[0]) {
-                    echo "hello from lablel $label"
+                    echo 'hello from master'
                     sh 'pwd'
                 }
             }
