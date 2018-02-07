@@ -1,7 +1,9 @@
+#!groovy
+
 @Library('CommonLib')
 import org.dmar.libs.CommonLib
 
-pipeline {
+try {
     agent any
     def mvnHome
     boolean skipBuild
@@ -89,4 +91,6 @@ pipeline {
     stage('Deploy') {
         //TODO
     }
+} catch (ignored) {
+    //Nothing TODO
 }
