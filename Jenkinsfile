@@ -92,5 +92,6 @@ try {
         //TODO
     }
 } catch (ignored) {
+    print 'some error is occurred'
     //Nothing TODO
 }
