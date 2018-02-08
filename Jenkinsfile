@@ -1,5 +1,6 @@
 node {
-    def labels = ['master', 'slave1'] // labels for Jenkins node types we will build on
+    def labels = ['master', 'slave1', 'master', 'slave1', 'master', 'slave1', 'master', 'slave1']
+    // labels for Jenkins node types we will build on
     def builders = [:]
     for (x in labels) {
         stage("parallel $x") {
@@ -14,7 +15,7 @@ node {
             }
         }
     }
-
+/*
     for (int i = 0; i < 10; i++) {
         stage("expance node [master]") {
             builders[labels[0]] = {
@@ -24,7 +25,7 @@ node {
                 }
             }
         }
-    }
+    }*/
 
     parallel builders
 }
