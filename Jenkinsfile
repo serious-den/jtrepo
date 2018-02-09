@@ -1,5 +1,7 @@
+#!/usr/bin/env groovy
+
 node {
-    def labels = ['master', 'slave1', 'master', 'slave1', 'master', 'slave1', 'master', 'slave1']
+    def labels = ['master', 'slave1', 'slave2', 'slave3', 'slave4', 'slave5']
     // labels for Jenkins node types we will build on
     def builders = [:]
     for (x in labels) {
@@ -10,7 +12,7 @@ node {
             builders[label] = {
                 node(label) {
                     echo "hello from lablel $label"
-                    sh 'pwd'
+                    sh 'wait 10'
                 }
             }
         }
