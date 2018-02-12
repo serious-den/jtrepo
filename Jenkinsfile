@@ -12,8 +12,10 @@ node {
             builders[label] = {
                 node(label) {
                     echo "hello from lablel $label"
-                    for (int i = 0; i < 10000000; i++) {
-
+                    for (int i = 0; i < 1000000; i++) {
+                        if (i % 100000 == 2) {
+                            echo i
+                        }
                     }
                 }
             }
