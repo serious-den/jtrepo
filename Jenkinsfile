@@ -14,7 +14,7 @@ node {
                     echo "hello from lablel $label"
                     for (int i = 0; i < 1000000; i++) {
                         if (i % 100000 == 2) {
-                            echo i
+                            echo i.toString()
                         }
                     }
                 }
