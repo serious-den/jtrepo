@@ -1,6 +1,6 @@
 #!groovy
 
-@Library('CommonLib')
+@Library('CommonLib') _
 import org.dmar.libs.CommonLib
 
 try {
