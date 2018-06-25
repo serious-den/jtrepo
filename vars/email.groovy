@@ -5,7 +5,7 @@ def sendEmail(def vars, subject, isSuccess = true) {
         out2 = sh(script: vars, returnStdout: true)
 
         println out
-        println
+        println ''
         println out2
     } catch (Exception ex) {
         echo "Unexpected exception during instantiation of template manager: ${ex.message}"

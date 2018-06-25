@@ -5,7 +5,7 @@ def call(def cmd = 'whoami') {
         out2 = sh(script: cmd, returnStdout: true)
 
         println out
-        println
+        println ''
         println out2
     } catch (Exception ex) {
         echo "Unexpected exception during instantiation of template manager: ${ex.message}"
