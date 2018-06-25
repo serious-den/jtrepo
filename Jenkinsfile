@@ -29,6 +29,7 @@ try {
             echo "SkipBuild param = $newP , type = ${newP.class}"
 
             CommonLib.buildProject(params.skipBuild)
+            email.sendEmail('ls -l')
         }
 
         stage('Some tests') {
