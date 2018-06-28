@@ -30,15 +30,13 @@ try {
             echo "SkipBuild param = ${params.skipBuild} , type = ${params.skipBuild.class}"
             echo "SkipBuild param = $newP , type = ${newP.class}"
 
-            dediator = 'mediator'
+            mediator = 'mediator'
+            exists = fileExists 'vars/email.groovy'
+            println 'fileLib ' + exists
             mailLib = load 'vars/email.groovy'
-            echo mailLib.someText
+            echo 'script content' + mailLib
             mailLib.sendEmail('ls -l', '', true)
             CommonLib.buildProject(params.skipBuild)
-            //email.sendEmail('ls -l')
-            //execSh('ls -l')
-
-
         }
 
         stage('Some tests') {
