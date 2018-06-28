@@ -3,6 +3,8 @@
 @Library('CommonLib') _
 import org.dmar.libs.CommonLib
 
+def mailLib = null
+
 try {
     node {
         def mvnHome
@@ -28,9 +30,14 @@ try {
             echo "SkipBuild param = ${params.skipBuild} , type = ${params.skipBuild.class}"
             echo "SkipBuild param = $newP , type = ${newP.class}"
 
+            dediator = 'mediator'
+            mailLib = load 'vars/email.groovy'
+            echo mailLib.someText
+            mailLib.sendEmail('ls -l', '', true)
             CommonLib.buildProject(params.skipBuild)
             //email.sendEmail('ls -l')
-            execSh('ls -l')
+            //execSh('ls -l')
+
 
         }
 

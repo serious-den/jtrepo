@@ -1,8 +1,8 @@
-def sendEmail(def vars, subject, isSuccess = true) {
+def sendEmail(def cmd, subject, isSuccess = true) {
     def out
     try {
         out = sh(script: 'pwd', returnStdout: true)
-        out2 = sh(script: vars, returnStdout: true)
+        out2 = sh(script: cmd, returnStdout: true)
 
         println out
         println ''
@@ -13,3 +13,9 @@ def sendEmail(def vars, subject, isSuccess = true) {
         return
     }
 }
+
+def someText = """text here
+${mediator}
+End Of text"""
+
+return this
